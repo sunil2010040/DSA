@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int moveToend(int arr[], int n)
+void move_zero_to_end(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -14,25 +14,26 @@ int moveToend(int arr[], int n)
                     swap(arr[i], arr[j]);
                 }
             }
-            for (int i = 0; i < n; i++)
-            {
-                return arr[i];
-            }
         }
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
     }
 }
 
 int main()
 {
-    int r, numbers[r];
-    cin >> r;
-    for (int i = 0; i < r; ++i)
+    int n;
+    cin >> n; 
+    int arr[n];
+    
+    for (int i = 0; i < n; i++)
     {
-        cin >> numbers[i];
+        cin >> arr[i];
     }
-    for (int i = 0; i < r; ++i)
-    {
-        cout << moveToend(numbers, r) << " ";
-    }
+    
+    move_zero_to_end(arr,n);
     return 0;
 }
